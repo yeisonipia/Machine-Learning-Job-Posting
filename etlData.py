@@ -1,7 +1,7 @@
 import pandas as pd 
 from sqlalchemy import create_engine, text, Column, Integer, String, DateTime, Float
 from sqlalchemy.orm import declarative_base, sessionmaker
-from datetime import datetime
+
 
 #Conectamos al motor de base de datos para crear la base de datos
 engine = create_engine('mysql+mysqlconnector://Yeison:1123@localhost')
@@ -62,8 +62,6 @@ if __name__ == '__main__':
                             company_locality = data['company_address_locality'].iloc[i],
                             level = data['seniority_level'].iloc[i],
                             job_title = data['job_title'].iloc[i]))
-        
-
         
     session.commit()
     session.close()
